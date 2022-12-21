@@ -33,6 +33,56 @@ console.log(imena);
 var names = ["Aca", "Mira", "Branimir", "Dule", "Aca", "Mira", "Aca"];
 
 var obj = {};
+//20. Date su sledece promenijive. Koristeci se string funkcijama spojiti ovastringa u jedan.
+
+var text1 ="Dobar dan";
+var text2  = " Dobrodošli"
+var join = text1.concat(text2);
+console.log(join);
+
+//21.Razdvojiti dati string na reči koje će biti smeštene u poseban niz.
+
+var tekst = "Ovo je moj tekst";
+var n = tekst.split(" ");
+for (i=0; i<n.length; i++){
+  console.log(n[i]);
+}
+
+// 22.Dat je niz.Ispisati prvi element niza.
+//var niz=[2,5,2,1,6];
+
+var niz=[2,5,2,1,6]
+console.log(niz[0]);
+
+//23.Ispisati samo elemente datog niza koji su deljivi sa 5.
+
+var niz=[2,5,2, 1,6,7,25,45,9,6,65];
+for(i=0; i<niz.length; i++){
+  if(niz[i] % 5==0)
+  
+  console.log(niz[i]);
+}
+
+//24. Ispisati na stranici zbir svih elemenata niza.
+
+var niz=[2, 5,2, 1,6,7,25, 45,9, 6, 65];
+var zbir = 0;
+for(i=0; i<niz.length; i++){
+  zbir= zbir+niz[i];
+}
+console.log("Zbir svih elemenata niza je: " +zbir);
+
+
+// 25.Kreirati funkciju koja vrsi pretvaranje pozitivnog broja u negativan,negativan broj pretvara u pozitivan. Broj se zadaje kao parametar funkcije i prosleđuje se prilikom njenog pozivanja.
+ 
+function pretvori(broj){
+  if(broj==0)
+  return broj;
+  else return -broj;
+
+}
+console.log(pretvori(5));
+
 for (var i = 0; i < names.length; i++) {
   obj[names[i]] = obj[names[i]] + 1 || 1;
 }
