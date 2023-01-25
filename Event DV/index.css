@@ -1,0 +1,16 @@
+#div1, #div2, #div3{
+    width: 100px;
+    height: 50px;
+    border: 1px solid gray;
+    float: left;
+    margin: 30px;
+}   
+#div1{
+    background-color: aqua;
+}
+#div2{
+    background-color: blueviolet;
+}
+#div3{
+    background-color: magenta;
+}
