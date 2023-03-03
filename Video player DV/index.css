@@ -4,16 +4,20 @@
     width: 1000px;
     margin:  0 auto;
 }
+
 .container {
     width: 600px;
     height: 400px;
     margin:  30px auto;
     position: relative;
 }
+
 h1{
     text-align: center;
-    color: blueviolet;
+    color: blueviolet; 
+    text-decoration-line:underline;    
 }
+
 video {
     width: 600px;
     height: 400px;
