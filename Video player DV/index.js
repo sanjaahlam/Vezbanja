@@ -51,7 +51,7 @@ function relaodVideo() {
 
 //CONSTRUCTOR FUNCTION
 
-(function () {
+/*(function () {
   function VideoPlayer() {
     this.playBtn = document.querySelector("#play");
     this.reloadBtn = document.querySelector("#reload");
@@ -75,4 +75,34 @@ function relaodVideo() {
     };
   }
   let vp = new VideoPlayer().init();
+})();*/
+
+//Finalna verzija (više playera)
+
+(function () {
+  function VideoPlayer(id) {
+    this.container = document.querySelector("#" + id);
+    this.playBtn = this.container.querySelector(".play");
+    this.reloadBtn = this.container.querySelector(".reload");
+    this.video = this.container.querySelector("video");
+    this.init = function () {
+      this.playBtn.addEventListener("click", this.playVideo.bind(this));
+      this.reloadBtn.addEventListener("click", this.reloadVideo.bind(this));
+    };
+    this.playVideo = function () {
+      if (this.playBtn.getAttribute("src") == "play.png") {
+        this.video.play();
+        this.playBtn.setAttribute("src", "pause.png");
+      } else {
+        this.video.pause();
+        this.playBtnsetAttribute("src", "play.png");
+      }
+    };
+    this.reloadVideo = function () {
+      this.video.load();
+      this.playBtn.setAttribute("src", "play.png");
+    };
+  }
+  let vp = new VideoPlayer("one").init();
+  let vp2 = new VideoPlayer("two").init();
 })();
