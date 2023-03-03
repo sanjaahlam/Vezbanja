@@ -10,6 +10,10 @@
     margin:  30px auto;
     position: relative;
 }
+h1{
+    text-align: center;
+    color: blueviolet;
+}
 video {
     width: 600px;
     height: 400px;
