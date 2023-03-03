@@ -1,4 +1,4 @@
-let playBtn = document.querySelector("#play");
+/*let playBtn = document.querySelector("#play");
 let reloadBtn = document.querySelector("#reload");
 let video = document.querySelector("video");
 
@@ -18,9 +18,11 @@ function playVideo() {
 function relaodVideo() {
   video.load();
   playBtn.setAttribute("src", "play.png");
-}
+}*/
 
-/*(function(){
+//ENKAPSUALIZACIJA KODA
+
+/*(function () {
   let videoPlayer = {
     playBtn: document.querySelector("#play"),
     reloadBtn: document.querySelector("#reload"),
@@ -38,38 +40,39 @@ function relaodVideo() {
         this.setAttribute("src", "play.png");
       }
     },
-  
+
     reloadVideo: function () {
       videoPlayer.video.load();
       videoPlayer.playBtn.setAttribute("src", "play.png");
     },
   };
   videoPlayer.init();
-  
+})(); */
 
-})()
+//CONSTRUCTOR FUNCTION
 
-let videoPlayer = {
-  playBtn: document.querySelector("#play"),
-  reloadBtn: document.querySelector("#reload"),
-  video: document.querySelector("video"),
-  init: function () {
-    videoPlayer.playBtn.addEventListener("click", videoPlayer.playVideo);
-    videoPlayer.reloadBtn.addEventListener("click", videoPlayer.reloadVideo);
-  },
-  playVideo: function () {
-    if (this.getAttribute("src") == "play.png") {
-      videoPlayer.video.play();
-      this.setAttribute("src", "pause.png");
-    } else {
-      videoPlayer.video.pause();
-      this.setAttribute("src", "play.png");
-    }
-  },
-
-  reloadVideo: function () {
-    videoPlayer.video.load();
-    videoPlayer.playBtn.setAttribute("src", "play.png");
-  },
-};
-videoPlayer.init();*/
+(function () {
+  function VideoPlayer() {
+    this.playBtn = document.querySelector("#play");
+    this.reloadBtn = document.querySelector("#reload");
+    this.video = document.querySelector("video");
+    this.init = function () {
+      this.playBtn.addEventListener("click", this.playVideo.bind(this));
+      this.reloadBtn.addEventListener("click", this.reloadVideo.bind(this));
+    };
+    this.playVideo = function () {
+      if (this.playBtn.getAttribute("src") == "play.png") {
+        this.video.play();
+        this.playBtn.setAttribute("src", "pause.png");
+      } else {
+        this.video.pause();
+        this.playBtnsetAttribute("src", "play.png");
+      }
+    };
+    this.reloadVideo = function () {
+      this.video.load();
+      this.playBtn.setAttribute("src", "play.png");
+    };
+  }
+  let vp = new VideoPlayer().init();
+})();
